@@ -1,6 +1,5 @@
 class ServicesController < ApplicationController
   def index
-    debugger
     @providers     ||= omniauth_providers
     @user_services   = current_user.services
   end
