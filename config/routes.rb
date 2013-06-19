@@ -4,6 +4,7 @@ OmniauthRails::Application.routes.draw do
   match '/logout' => 'sessions#destroy', via: %i(get delete), as: :logout
 
   resources :services, only: %i(index create destroy)
+  resources :profiles
 
   root to: "sessions#new"
 end
