@@ -1,20 +1,20 @@
 class ServicesController < ApplicationController
+
+
   def index
     @providers     ||= omniauth_providers
     @user_services   = current_user.services
   end
 
   def create
+
     current_service = Service.where(provider: omnihash[:provider], uid: omnihash[:uid]).first
 
     if logged_in?
       if current_service
         flash[:notice] = I18n.t('notifications.provider_already_connected', provider: omnihash[:provider])
       else
-        current_user.services.create!({
-          provider: omnihash[:provider],
-          uid: omnihash[:uid]
-        })
+        current_user.services.create!({provider: omnihash[:provider],uid: omnihash[:uid]})
 
         flash[:notice] = I18n.t('notifications.provider_added', provider: omnihash[:provider])
       end
