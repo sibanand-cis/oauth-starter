@@ -49,3 +49,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'debugger'
 end
+
+gem 'carmen-rails', :git => 'https://github.com/freerunningtechnologies/carmen-rails', :branch => 'rails4'
+gem 'fastercsv'
+gem 'spreadsheet'

@@ -29,3 +29,12 @@
 <br />
 
 <%= link_to 'New Profile', new_profile_path %>
+
+
+
+<p>
+  Download:
+  <%= link_to "CSV", profiles_path(format: "csv") %> |
+  <%= link_to "Excel", profiles_path(format: "xls") %>
+</p>
+
